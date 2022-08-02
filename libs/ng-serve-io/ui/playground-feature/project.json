@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/ng-serve-io/ui/playground-feature/src",
+  "prefix": "ng-serve-io",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng-serve-io/ui/playground-feature"],
+      "options": {
+        "jestConfig": "libs/ng-serve-io/ui/playground-feature/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-serve-io/ui/playground-feature/**/*.ts",
+          "libs/ng-serve-io/ui/playground-feature/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:ng-serve-io", "platform:ng", "type:api-feature"]
+}

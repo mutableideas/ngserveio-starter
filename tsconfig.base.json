@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-serve-io/api-playground-feature": [
+        "libs/ng-serve-io/api/playground-feature/src/index.ts"
+      ],
+      "@ng-serve-io/common": ["libs/ng-serve-io/common/src/index.ts"],
+      "@ng-serve-io/ui-data-access": [
+        "libs/ng-serve-io/ui/data-access/src/index.ts"
+      ],
+      "@ng-serve-io/ui-playground-feature": [
+        "libs/ng-serve-io/ui/playground-feature/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

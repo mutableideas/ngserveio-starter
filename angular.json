@@ -1,5 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "ng-serve-io-api-playground-feature": "libs/ng-serve-io/api/playground-feature",
+    "ng-serve-io-common": "libs/ng-serve-io/common",
+    "ng-serve-io-ng-serve-io-playground-app-e2e": "apps/ng-serve-io/ng-serve-io-playground-app-e2e",
+    "ng-serve-io-playground-api": "apps/ng-serve-io/playground-api",
+    "ng-serve-io-playground-app": "apps/ng-serve-io/playground-app",
+    "ng-serve-io-ui-data-access": "libs/ng-serve-io/ui/data-access",
+    "ng-serve-io-ui-playground-feature": "libs/ng-serve-io/ui/playground-feature"
+  }
 }

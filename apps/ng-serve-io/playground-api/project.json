@@ -1,0 +1,57 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ng-serve-io/playground-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ng-serve-io/playground-api",
+        "main": "apps/ng-serve-io/playground-api/src/main.ts",
+        "tsConfig": "apps/ng-serve-io/playground-api/tsconfig.app.json",
+        "assets": ["apps/ng-serve-io/playground-api/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/ng-serve-io/playground-api/src/environments/environment.ts",
+              "with": "apps/ng-serve-io/playground-api/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "ng-serve-io-playground-api:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "ng-serve-io-playground-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ng-serve-io/playground-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ng-serve-io/playground-api"],
+      "options": {
+        "jestConfig": "apps/ng-serve-io/playground-api/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["domain:ng-serve-io", "platform:nest", "type:api-app"]
+}
